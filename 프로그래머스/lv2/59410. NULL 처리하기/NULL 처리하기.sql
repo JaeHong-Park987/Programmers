@@ -1,7 +1,8 @@
 -- 코드를 입력하세요
+-- NULL 처리 : IFNULL(컬럼명, NULL값을 대체할 값) AS 컬럼명
 SELECT 
     ANIMAL_TYPE, 
-    IFNULL(NAME, "No name") AS NAME,
+    IFNULL(NAME, "No name") AS NAME, # IFNULL대신 COALESCE사용해도 됨
     SEX_UPON_INTAKE
 FROM ANIMAL_INS
 ORDER BY ANIMAL_ID ASC;
