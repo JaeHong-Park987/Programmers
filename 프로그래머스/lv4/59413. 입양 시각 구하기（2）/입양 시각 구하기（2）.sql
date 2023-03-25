@@ -1,20 +1,38 @@
 -- 코드를 입력하세요
-SELECT 
-    B.n AS HOUR, 
-    IFNULL(A.COUNT, 0) AS COUNT
-FROM(
-    SELECT 
+# 재귀함수 이해하기
+WITH RECURSIVE CTE AS( 
+    SELECT 0 AS HOUR
+    UNION ALL
+    SELECT HOUR+1 FROM CTE WHERE HOUR < 23)
+
+SELECT
+    C.HOUR,
+    IFNULL(A.COUNT,0) AS COUNT
+FROM CTE AS C
+LEFT OUTER JOIN(SELECT
         HOUR(DATETIME) AS HOUR,
         COUNT(*) AS COUNT
-    FROM ANIMAL_OUTS
-    GROUP BY HOUR
-    ) A
-    RIGHT JOIN(
-    WITH RECURSIVE cte AS(
-    SELECT 0 AS n
-    UNION ALL
-    SELECT n + 1 FROM cte WHERE n < 23
-    )
-    SELECT n FROM cte
-    ) B on A.HOUR = B.n
-    ORDER BY HOUR ASC;
+     FROM ANIMAL_OUTS
+     GROUP BY HOUR) AS A
+ON C.HOUR = A.HOUR
+ORDER BY HOUR ASC;
+
+-- SELECT 
+--     B.n AS HOUR, 
+--     IFNULL(A.COUNT, 0) AS COUNT
+-- FROM(
+--     SELECT 
+--         HOUR(DATETIME) AS HOUR,
+--         COUNT(*) AS COUNT
+--     FROM ANIMAL_OUTS
+--     GROUP BY HOUR
+--     ) A
+--     RIGHT JOIN(
+--     WITH RECURSIVE cte AS(
+--     SELECT 0 AS n
+--     UNION ALL
+--     SELECT n + 1 FROM cte WHERE n < 23
+--     )
+--     SELECT n FROM cte
+--     ) B on A.HOUR = B.n
+--     ORDER BY HOUR ASC;
