@@ -18,4 +18,3 @@ FROM(
     SELECT n FROM cte
     ) B on A.HOUR = B.n
     ORDER BY HOUR ASC;
-
