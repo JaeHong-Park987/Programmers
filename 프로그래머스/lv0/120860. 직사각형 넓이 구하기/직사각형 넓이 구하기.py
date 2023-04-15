@@ -6,7 +6,7 @@ def solution(dots):
         x.append(c[0])
         y.append(c[1])
         
-    # 중복 제거
+    # 중복 제거 -> max,min 활용해보기!!
     x = list(set(x))
     y = list(set(y))
     
