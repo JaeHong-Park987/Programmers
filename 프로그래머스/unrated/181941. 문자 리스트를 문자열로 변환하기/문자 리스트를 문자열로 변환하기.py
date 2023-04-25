@@ -3,3 +3,4 @@ def solution(arr):
     for s in arr:
         answer += s
     return answer
+    # return ''.join(arr)
