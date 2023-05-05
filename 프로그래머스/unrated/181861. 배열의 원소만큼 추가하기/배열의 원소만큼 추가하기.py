@@ -3,5 +3,5 @@ def solution(arr):
     for i in arr:
         for j in range(0,i):
             answer.append(i)
-            j += 1
+            # j += 1
     return answer
