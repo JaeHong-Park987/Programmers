@@ -1,10 +1,6 @@
 def solution(x, n):
     answer = []
-    num = 0
-    
-    while n != 0:
-        num += x
-        answer.append(num)
-        n -= 1
+    for i in range(n):
+        answer.append(x * i + x)
     
     return answer
