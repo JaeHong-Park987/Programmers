@@ -1,11 +1,6 @@
 def solution(my_string, num1, num2):
-    answer = ''
-    for i in range(len(my_string)):
-        if i == num1:
-            answer += my_string[num2]
-        elif i == num2:
-            answer += my_string[num1]
-        else:
-            answer += my_string[i]
-            
+    list_word = list(my_string)
+    list_word[num1], list_word[num2] = list_word[num2], list_word[num1]
+    answer = ''.join(list_word)
+    
     return answer
