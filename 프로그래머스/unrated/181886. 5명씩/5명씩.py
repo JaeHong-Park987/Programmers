@@ -1,5 +1,3 @@
 def solution(names):
-    answer = []
-    for i in range(0,len(names),5):
-        answer.append(names[i])
-    return answer
+    return names[::5]
+# for문을 사용하지 않고 주어진 리스트를 가지고 풀 수 있다.
