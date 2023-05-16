@@ -1,9 +1,8 @@
 def solution(myString):
-    before_l = ['a','b','c','d','e','f','g','h','i','j','k']
     answer = ''
     
     for i in myString:
-        if i in before_l:
+        if i < 'l': # 알파벳도 대소 비교가 가능하다
             answer += 'l'
         else:
             answer += i
