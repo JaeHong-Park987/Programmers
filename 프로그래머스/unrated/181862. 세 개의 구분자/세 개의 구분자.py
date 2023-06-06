@@ -1,10 +1,9 @@
 def solution(myStr):
-    answer = []
-    new_list = myStr.replace('a','c').replace('b','c').split('c')
+    new_str = myStr.replace('a',' ').replace('b',' ').replace('c', ' ')
     
-    for i in new_list:
-        if len(i) != 0:
-            answer.append(i)
-    if len(answer) == 0:
+    k = new_str.split()
+    
+    if len(k) != 0:
+        return k
+    else:
         return ['EMPTY']
-    return answer
