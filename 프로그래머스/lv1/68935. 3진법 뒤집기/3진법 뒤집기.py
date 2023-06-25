@@ -7,8 +7,7 @@ def solution(n):
         n = n // 3 # 몫
         r_num_3 += str(r)
         
-    for i in range(len(r_num_3)):
-        answer += (3 ** (len(r_num_3) - 1 - i)) * int(r_num_3[i])
+    # for i in range(len(r_num_3)):
+    #     answer += (3 ** (len(r_num_3) - 1 - i)) * int(r_num_3[i])
     
-    return answer
-# 1 3 9 27 81
+    return int(r_num_3, 3)
