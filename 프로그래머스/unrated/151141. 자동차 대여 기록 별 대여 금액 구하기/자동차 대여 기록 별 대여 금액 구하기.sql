@@ -1,4 +1,5 @@
 -- 코드를 입력하세요
+# 46분 25초
 SELECT
     HISTORY_ID,
     CASE
