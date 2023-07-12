@@ -1,4 +1,5 @@
 -- 코드를 입력하세요
+# 4분 50초
 SELECT
     U1.TITLE,
     U1.BOARD_ID,
