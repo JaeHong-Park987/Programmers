@@ -1,20 +1,18 @@
+def bracket(s):
+        stack = []
+        for i in s:
+            if len(stack) == 0: stack.append(i)
+            else:
+                if i == ")" and stack[-1] == "(":   stack.pop()
+                elif i == "]" and stack[-1] == "[":   stack.pop()
+                elif i == "}" and stack[-1] == "{":   stack.pop()
+                else: stack.append(i)
+        return 1 if len(stack) == 0 else 0
+        
 def solution(s):
     answer = 0
     
     for i in range(len(s)):
-        s = s[1:len(s)+1] + s[0]
-        new_s = ''
-        
-        for j in range(len(s)):
-            new_s += s[j]
-            if "()" or "{}" or "[]" in new_s:
-                new_s = new_s.replace("()","").replace("{}","").replace("[]","")
-        
-        if len(new_s) == 0:
-            answer += 1
-        else:
-            pass
-    
+        if bracket(s):  answer +=1
+        s = s[1:] + s[:1]
     return answer
-                
-                
