@@ -1,13 +1,10 @@
 def solution(cards1, cards2, goal):
-    c1 = 0
-    c2 = 0
     for i in goal:
-        if len(cards1) > c1 and i == cards1[c1]:
-            c1 += 1
-        elif len(cards2) > c2 and i == cards2[c2]:
-            c2 += 1
+        if len(cards1) > 0 and i == cards1[0]:
+            cards1.pop(0)
+        elif len(cards2) > 0 and i == cards2[0]:
+            cards2.pop(0)
         else:
             return "No"
-            break
     
     return "Yes"
