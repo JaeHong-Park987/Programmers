@@ -1,5 +1,2 @@
 # Programmers
-This is a auto push repository for Baekjoon Online Judge created with [BaekjoonHub](https://github.com/BaekjoonHub/BaekjoonHub).
-
-
-SQL, Python 코딩 테스트 연습
+프로그래머스를 활용하여 SQL, Python 코딩 테스트 연습
